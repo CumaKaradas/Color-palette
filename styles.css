@@ -1,0 +1,181 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: "Roboto", Arial, "Segoe UI", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#palette {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.color-box {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.color-box:hover {
+    transform: scale(1.05);
+}
+
+.hex-code {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.color-name {
+    margin-top: 5px;
+}
+
+/* Custom Button Styles */
+.custom-button {
+    --width: 150px;
+    --timing: 2s;
+    border: 0;
+    width: var(--width);
+    padding-block: 1em;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1em;
+    background: #D7EDF0;
+    transition: all 0.2s ease-in-out;
+    border-radius: 3px;
+}
+
+.custom-button:hover {
+    background-image: linear-gradient(to right, rgb(250, 82, 82), rgb(250, 82, 82) 16.65%, rgb(190, 75, 219) 16.65%, rgb(190, 75, 219) 33.3%, rgb(76, 110, 245) 33.3%, rgb(76, 110, 245) 49.95%, rgb(64, 192, 87) 49.95%, rgb(64, 192, 87) 66.6%, rgb(250, 176, 5) 66.6%, rgb(250, 176, 5) 83.25%, rgb(253, 126, 20) 83.25%, rgb(253, 126, 20) 100%, rgb(250, 82, 82) 100%);
+    animation: var(--timing) linear dance6123 infinite;
+    transform: scale(1.1) translateY(-1px);
+}
+
+@keyframes dance6123 {
+    to {
+        background-position: var(--width);
+    }
+}
+
+/* Açma/kapatma düğmesi (Switch) */
+.switch {
+    font-size: 17px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+    z-index: 3;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #2196F3;
+    transition: .4s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 20px;
+    left: 0.3em;
+    bottom: 0.3em;
+    background-color: yellow;
+    transition: .4s;
+}
+
+.switch input:checked + .slider:before {
+    background-color: black;
+    border-radius: 50px;
+    box-shadow: inset 9px 0px 1px 0px white;
+}
+
+.switch input:checked + .slider {
+    background-color: black;
+}
+
+.switch input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+.switch input:checked + .slider:before {
+    transform: translateX(1.5em);
+}
+
+/* Koyu Tema */
+.dark-theme {
+    background-color: #333;
+    color: white;
+}
+
+.dark-theme h1 {
+    color: white;
+}
+
+/* Açık Tema */
+.light-theme {
+    background-color: white;
+    color: black;
+}
+
+.light-theme h1 {
+    color: black;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .color-box {
+        width: 80px;
+        height: 80px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .custom-button {
+        width: 100px;
+    }
+}

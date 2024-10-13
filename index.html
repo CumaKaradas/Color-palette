@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Random Color</title>
+    <meta name="description" content="A simple web application to generate random color palettes.">
+    <meta name="keywords" content="color, palette, random, theme">
+    <meta property="og:title" content="The Random Color">
+    <meta property="og:description" content="Generate random color palettes with light and dark theme support.">
+    <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/color-mode.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <label class="switch" aria-label="Toggle dark and light theme">
+        <input type="checkbox" id="colorSwitch">
+        <span class="slider"></span>
+    </label>
+    <h1>The Random Color</h1>
+    <div id="palette"></div>
+    <button id="generatePalette" class="custom-button" aria-label="Generate new color palette">Generate Palette</button>
+    <script src="script.js"></script>
+</body>
+</html>
